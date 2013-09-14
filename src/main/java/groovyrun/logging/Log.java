@@ -1,41 +1,28 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package groovyrun.logging;
 
 import java.util.Date;
 
-/**
- *
- * @author abj
- */
 public class Log {
 
-    
-    public void error(String message)
-    {
+
+    public void error(String message) {
         this.logMessage(message, "ERROR");
     }
-    
-    public void warning(String message)
-    {
+
+    public void warning(String message) {
         this.logMessage(message, "WARN");
     }
-    
-    public void notice(String message)
-    {
+
+    public void notice(String message) {
         this.logMessage(message, "NOTICE");
     }
-    
-    
-    private void logMessage(String message, String type)
-    {
+
+
+    private void logMessage(String message, String type) {
         Date now = new Date();
-        
-        System.err.println(now+" : "+type+" : "+message);
+
+        System.err.println(now + " : " + type + " : " + message);
     }
-    
-    
+
+
 }
