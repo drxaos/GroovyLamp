@@ -58,13 +58,9 @@ public class RequestWorker implements Runnable {
             response.writeTo(pout);
             pout.close();
 
-            long time = (System.currentTimeMillis() - time_started);
-            float ftime = time / 1000.0f;
-            this.server.getLog().notice("Time taken " + ftime + " seconds");
-
             in.close();
             out.close();
-            this.server.getLog().notice("Worker done!");
+            this.server.getLog().notice("Handled Request from " + request.getRemoteAddr() + " (" + request.env.get("HTTP_USER_AGENT") + ")");
 
 
         } catch (IOException e) {

@@ -76,8 +76,6 @@ public class SCGIApplicationServer implements Runnable {
 
             this.log.error("Unable to close server socket");
             //throw e;
-            return;
-
         }
 
     }
