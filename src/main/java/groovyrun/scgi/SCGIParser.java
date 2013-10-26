@@ -1,12 +1,3 @@
-/*
- * SCGIParser.java
- *
- * Created on September 6, 2007, 8:12 AM
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
-
 package groovyrun.scgi;
 
 import java.io.IOException;
@@ -15,9 +6,6 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 
-/**
- * @author alastairjames
- */
 public class SCGIParser {
 
     public static class SCGIException extends IOException {
@@ -29,26 +17,8 @@ public class SCGIParser {
         }
     }
 
-    /**
-     * Used to decode the headers.
-     */
     public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
 
-    /**
-     * Read the <a href="http://python.ca/scgi/protocol.txt">SCGI</a> request headers.<br>
-     * After the headers had been loaded,
-     * you can read the body of the request manually from the same {@code input} stream:<pre>
-     *   // Load the SCGI headers.
-     *   Socket clientSocket = socket.accept();
-     *   BufferedInputStream bis = new BufferedInputStream(clientSocket.getInputStream(), 4096);
-     *   HashMap<String, String> env = SCGI.parse(bis);
-     *   // Read the body of the request.
-     *   bis.read(new byte[Integer.parseInt(env.get("CONTENT_LENGTH"))]);
-     * </pre>
-     *
-     * @param input an efficient (buffered) input stream.
-     * @return strings passed via the SCGI request.
-     */
     public static HashMap<String, String> parse(InputStream input) throws IOException {
 
         StringBuilder lengthString = new StringBuilder(12);

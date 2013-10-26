@@ -5,12 +5,13 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.1.7'
+    compile 'org.codehaus.groovy:groovy-all:2.1.8'
+    compile 'org.apache.ivy:ivy:2.3.0'
 }
 
 jar {
-	from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-	manifest {
-		attributes('Main-class': 'groovyrun.Main')
-	}
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    manifest {
+       attributes('Main-class': 'groovyrun.Main')
+    }
 }
