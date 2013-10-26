@@ -5,4 +5,4 @@ Groovy LAMP is a fork of the original [Groovy LAMP](https://code.google.com/p/gr
 ## Features
 
 * Better Console Output
-* Uses Groovy 2.1.7
+* Uses Groovy 2.1.8
