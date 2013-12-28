@@ -5,7 +5,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.1.8'
+    compile 'org.codehaus.groovy:groovy-all:2.2.1'
     compile 'org.apache.ivy:ivy:2.3.0'
 }
 
