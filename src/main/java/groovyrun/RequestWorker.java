@@ -56,7 +56,7 @@ public class RequestWorker implements Runnable {
 
             PrintWriter pout = new PrintWriter(this.out);
             response.writeTo(pout);
-            pout.close();
+            pout.flush();
 
             in.close();
             out.close();

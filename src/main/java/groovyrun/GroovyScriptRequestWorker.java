@@ -15,18 +15,13 @@ public class GroovyScriptRequestWorker extends RequestWorker {
     GroovyScriptEngine gse;
 
     public GroovyScriptRequestWorker(SCGIApplicationServer server, InputStream in, OutputStream out) {
-
         super(server, in, out);
 
         try {
-
             String[] roots = new String[]{"/"};
             gse = new GroovyScriptEngine(roots);
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         }
 
     }
@@ -34,7 +29,6 @@ public class GroovyScriptRequestWorker extends RequestWorker {
 
     public void work(HTTPRequest request, HTTPResponse response) throws Exception {
         try {
-
             Binding binding = new Binding();
             binding.setVariable("out", response.getOutputWriter());
             binding.setVariable("request", request);
@@ -45,11 +39,8 @@ public class GroovyScriptRequestWorker extends RequestWorker {
             response.setStatus(200);
 
         } catch (ResourceException ex) {
-
             ex.printStackTrace();
-
             response.setStatus(404);
-
         }
     }
 

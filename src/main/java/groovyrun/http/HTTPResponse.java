@@ -40,22 +40,19 @@ public class HTTPResponse {
     }
 
     private void writeHeaders(PrintWriter out) {
-        out.println("Status: " + this.status);
-        out.println("Content-type: " + this.content_type);
-        out.println("Content-length: " + this.buffer_str.getBytes().length);
+        out.print("Status: " + this.status + "\n");
+        out.print("Content-type: " + this.content_type + "\n");
+        out.print("Content-length: " + this.buffer_str.getBytes().length + "\n");
 
         // Deal with cookies
         if (!this.cookies.isEmpty()) {
-
             for (String key : this.cookies.keySet()) {
                 String value = this.cookies.get(key);
-                out.println("Set-Cookie: " + key + "=" + value);
+                out.print("Set-Cookie: " + key + "=" + value + "\n");
             }
-
         }
 
-        out.println();
-        out.println();
+        out.print("\n");
     }
 
     public void writeTo(PrintWriter out) {
@@ -63,7 +60,7 @@ public class HTTPResponse {
 
         this.writeHeaders(out);
 
-        out.println(this.buffer_str);
+        out.print(this.buffer_str);
     }
 
     public void clearBuffer() {
