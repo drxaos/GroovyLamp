@@ -1,11 +1,3 @@
-build/
-.gradle/
-*.iml
-.idea/
-out/
-www/
-*.xml
-
 # Created by https://www.gitignore.io
 
 ### Maven ###
